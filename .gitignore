@@ -15,3 +15,6 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+
+# run.py writes its outputs here
+out/

@@ -1,7 +1,7 @@
 """SMALL-level control evaluators — Clause 6-3 Detailed operational/technical.
 
 Per-packet integrity, freshness, logging and the composite Agent Reputation
-Score that the deck highlights as its own category.
+Score, which the taxonomy treats as a category of its own.
 """
 
 from __future__ import annotations

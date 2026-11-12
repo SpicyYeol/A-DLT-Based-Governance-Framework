@@ -188,7 +188,7 @@ def bench(nblocks=20000):
             "incremental_verify_blocks_per_s": nblocks / t_incr}
 
 
-if __name__ == "__main__":
+def main() -> int:
     env = {"python": sys.version.split()[0], "sklearn": sklearn.__version__,
            "cpu": platform.processor(), "image_cap": config.IMAGE_SAMPLE_CAP,
            "rounds": config.NUM_ROUNDS}
@@ -215,3 +215,8 @@ if __name__ == "__main__":
               open(OUT / "rev1_scale.json", "w"), indent=1)
     for s_ in summary:
         print(json.dumps(s_))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

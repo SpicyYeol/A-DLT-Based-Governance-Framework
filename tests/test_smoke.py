@@ -8,10 +8,12 @@ seconds.
 
 What is checked is what the paper claims about the specification itself: the
 3-12-36 shape, the split between measured and attestation controls, the three
-severity classes, and that the hash chain detects a rewritten record.
+severity classes, that the hash chain detects a rewritten record, and that
+importing a runner does not start an experiment.
 """
 from __future__ import annotations
 
+import io
 import os
 import sys
 import tempfile
@@ -103,6 +105,26 @@ def test_configuration_is_readable() -> None:
     assert config.NUM_AGENTS >= 1
     assert config.IMAGE_SAMPLE_CAP > 0
     assert config.ANOMALY_Z_TAU > 0
+
+
+def test_runners_do_not_run_on_import() -> None:
+    """Importing a runner must define its work, not do it. Every script under
+    scripts/ keeps its work inside a main() behind a __name__ guard, so that
+    reading or importing one cannot start an experiment or write a file."""
+    import contextlib
+    import importlib.util
+
+    scripts = sorted((ROOT / "scripts").glob("*.py"))
+    assert len(scripts) >= 9, len(scripts)
+    for path in scripts:
+        spec = importlib.util.spec_from_file_location(
+            "runner_" + path.stem, path)
+        module = importlib.util.module_from_spec(spec)
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
+            spec.loader.exec_module(module)
+        assert not buf.getvalue().strip(), (path.name, buf.getvalue()[:200])
+        assert callable(getattr(module, "main", None)), path.name
 
 
 def main() -> int:

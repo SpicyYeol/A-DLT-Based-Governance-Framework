@@ -142,9 +142,14 @@ def attestation_rescore():
             print(f"  {aid:<5d} {agg_ms(reps_old[aid]):16s} {agg_ms(reps_new[aid]):16s}")
 
 
-if __name__ == "__main__":
+def main() -> int:
     print("=" * 70)
     combined_baseline(MAIN, "main")
     combined_baseline(STEALTH, "stealth")
     attestation_rescore()
     print("\n" + "=" * 70 + "\ndone.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

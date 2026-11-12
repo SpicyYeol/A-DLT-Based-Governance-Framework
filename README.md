@@ -154,6 +154,24 @@ table uses **4,000**, and the drivers set it explicitly. The paper documents a
 silent fallback to that 8,000 default as the cause of an inconsistency it had to
 trace, so do not rely on the default when comparing against the article.
 
+**Run one experiment at a time per data root.** Every driver writes the same
+hash-chained ledger at `$TRUST_DATA_ROOT/ledger/trust_registry.jsonl` and resets
+it at the start of a run, so two drivers sharing a root interleave their appends
+and one of them then fails while reading the chain back. Each driver sets the
+root with `setdefault`, so an outer value wins and parallel runs need one root
+each:
+
+```sh
+mkdir -p data/run-a data/run-b
+cp -r data/exp/dataset_cache data/run-a/      # or symlink it
+cp -r data/exp/dataset_cache data/run-b/
+TRUST_DATA_ROOT=data/run-a TRUST_IMAGE_CAP=4000 python run.py table8 &
+TRUST_DATA_ROOT=data/run-b TRUST_IMAGE_CAP=4000 python run.py table9 &
+```
+
+The dataset cache lives under the root as well, which is why it is copied: a
+fresh root fetches the datasets again (about 170 MB).
+
 ---
 
 ## Reproducing the paper
@@ -265,6 +283,22 @@ evaluation seeds were run.
 **Standard deviations** use the population estimator over the evaluated seeds,
 dividing by *n* rather than *n* − 1, in every table and in the text.
 
+**What reproduces bit-for-bit, and what does not.** Within one environment the
+measured quantities are deterministic: re-running `table10` and `table8`
+reproduces `results/local/p0_out.json` and `results/local/mac5_out.json`
+byte-for-byte. Two kinds of field do not, and should not be compared that way:
+
+* **wall-clock timings** (`t_gov_s`, `t_fl_s`, `t_verify_s` and the percentages
+  derived from them), which depend on the machine and its load;
+* **ledger sizes** (`ledger_bytes`), because every block stores the submission
+  timestamp as a float and its decimal representation varies in length. The
+  effect is a few bytes per block — under 0.6% on the overhead experiment — and
+  is why the paper reports ledger cost as a range rather than a single figure.
+
+Re-running `tableS5` reproduces every detection and accuracy field of
+`results/local/exp3_out.json` exactly, and differs only in those two kinds of
+field.
+
 **Runs kept but not reported.** Seeds 72–76 are a five-seed pilot of the online
 experiment. Seeds 400–419 hold a two-record form of the auditability experiment,
 a design that cannot separate the breadth of the retained evidence from its
@@ -289,10 +323,12 @@ src/trust/              the framework
   aggregators.py        FedAvg, Krum, Multi-Krum, Trimmed-Mean, Coordinate-Median
   fltrust.py            FLTrust, used as a comparison only
   datasets.py           OpenML fetch and cache
-  experiments.py        the named experiment runners
+  experiments/          the named experiment runners, one module per
+                        experiment family
   ml_eval.py            accuracy, macro-F1, worst-class recall, calibration error
   manifold.py           post-training distribution checks
-  report.py             CSV and JSON writers
+  report/               CSV and JSON writers, one module per kind of
+                        deliverable
   tabular_security.py   the tabular detection path
   config.py             all configuration, read from the environment
 

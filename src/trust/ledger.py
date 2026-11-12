@@ -1,7 +1,7 @@
-"""Simulated DLT Trust Registry (slide 6).
+"""Simulated DLT Trust Registry.
 
 An append-only, hash-chained JSONL ledger. Each block records the tamper-evident
-audit trail described in the deck:
+audit trail the framework requires:
 
     { agent_id, data_hash, signature, timestamp, prev_hash, block_hash, ... }
 

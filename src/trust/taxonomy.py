@@ -1,9 +1,8 @@
 """
 Single source of truth for the DLT Agent-Trustworthiness Governance Framework.
 
-Encodes the 3-Tier x 12-Category x 36-Sub-Category structure from the
-proposal deck (slides 16-17) and *fills in* the two columns that are empty in
-that slide:
+Encodes the 3-Tier x 12-Category x 36-Sub-Category structure and *fills in*
+the two columns that the taxonomy itself leaves empty:
 
     Level (3) | Category (12) | Sub-Category (36) | Detailed Category | Control points
 
@@ -15,7 +14,7 @@ Design notes
 ------------
 * ``level``     : LARGE / MEDIUM / SMALL  (Clause 6 trust hierarchy)
 * ``dimension`` : Integrity / Authenticity / Availability / Accountability
-                  (the four governance-engine dimensions on slide 6)
+                  (the four governance-engine dimensions)
 * ``method``    : "data"        -> computed live from the open datasets / ledger
                   "attestation" -> governance/policy control, evidence-attested
 * ``orient``    : "general" (any AI/IoT/identity agent),
@@ -37,7 +36,7 @@ from typing import Optional
 # a gate; MEDIUM and SMALL contribute to the per-agent trust score.
 LEVEL_WEIGHTS = {"LARGE": 0.40, "MEDIUM": 0.35, "SMALL": 0.25}
 
-# Clause-8 classification thresholds -> slide-6 "Control Outcomes".
+# Clause-8 classification thresholds -> the three control outcomes.
 TRUST_THRESHOLDS = {"trusted": 0.80, "under_review": 0.60}  # below -> untrusted
 
 
@@ -348,7 +347,7 @@ _SMALL = [
 
 ALL_CONTROLS = _LARGE + _MEDIUM + _SMALL
 
-# Sanity: the deck promises exactly 3 x 12 x 36.
+# Sanity: the taxonomy is exactly 3 x 12 x 36.
 assert len({c.level for c in ALL_CONTROLS}) == 3, "expected 3 levels"
 assert len({c.category for c in ALL_CONTROLS}) == 12, "expected 12 categories"
 assert len(ALL_CONTROLS) == 36, f"expected 36 sub-categories, got {len(ALL_CONTROLS)}"

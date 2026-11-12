@@ -278,7 +278,12 @@ def run_seed(seed: int) -> dict:
             "t_verify_s": t_verify}
 
 
-if __name__ == "__main__":
+def main() -> int:
     out = [run_seed(s) for s in SEEDS]
     json.dump(out, open(OUT / "rev1_ledger.json", "w"), indent=1, default=str)
     print("done", [o["seed"] for o in out])
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -2,7 +2,7 @@
 
 Ties Clause 7 (Trust Control Structure: monitoring / enforcement / audit) to
 Clause 8 (Control Criteria: metrics / thresholds / conformance) and to the
-slide-6 Control Outcomes: Trusted / Under Review / Untrusted.
+the three control outcomes: Trusted / Under Review / Untrusted.
 """
 
 from __future__ import annotations
@@ -102,7 +102,7 @@ def score(ctx: Ctx, results: dict[str, ControlResult]) -> dict:
             gate_reasons.append(cp.id)
     foundation = (sys_num / sys_den) if sys_den else 1.0
 
-    # ---- per-agent verdicts (severity-driven; slide-6 Control Outcomes) ----
+    # ---- per-agent verdicts (severity-driven control outcomes) ----
     # A failure of ANY 'reject' control -> Untrusted (suspend); a failure of
     # only 'review' controls -> Under Review (audit); none -> Trusted. The
     # numeric trust score is kept as a reputation for ranking / FL gating.

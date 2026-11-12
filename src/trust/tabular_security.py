@@ -2,7 +2,7 @@
 
 Trains a lightweight anomaly/attack detector on KDDCup'99 (or the synthetic
 telemetry fallback) to demonstrate transaction-level trust screening for the
-satellite/IoT use case on slide 6. This is the ML-oriented counterpart to the
+satellite/IoT use case. This is the ML-oriented counterpart to the
 DL-oriented federated-learning branch.
 
 Output feeds the report as supplementary evidence and could gate MEDIUM /

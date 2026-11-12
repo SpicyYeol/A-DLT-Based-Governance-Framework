@@ -1,128 +1,16 @@
-"""Report writers.
+# -*- coding: utf-8 -*-
+"""One writer per supporting experiment, each producing the CSV the paper's
+corresponding table was built from.
 
-Produces the deliverable that mirrors the deck's slide 16/17 table — the
-*filled-in* Structure Trust Factors with the previously-empty
-``Detailed Category`` and ``Control points`` columns populated, plus the live
-status/score for each of the 36 sub-categories.
+Split out of the single report module; the code is unchanged.
 """
-
 from __future__ import annotations
 
 import csv
-import json
 from pathlib import Path
 
-from . import config
-from .taxonomy import ALL_CONTROLS
-
-
-def write_structure_trust_factors(results: dict, out_dir: Path | None = None) -> Path:
-    out_dir = Path(out_dir or config.REPORTS_DIR)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    path = out_dir / "structure_trust_factors_filled.csv"
-    with path.open("w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.writer(fh)
-        w.writerow(["Level (3)", "Category (12)", "Sub-Category (36)",
-                    "Detailed Category", "Control points", "Metric", "Threshold",
-                    "Dimension", "Method", "Orientation",
-                    "Status", "Score"])
-        for cp in ALL_CONTROLS:
-            r = results["controls"][cp.id]
-            w.writerow([cp.level, cp.category, cp.subcategory,
-                        cp.detailed_category, cp.control_point, cp.metric,
-                        cp.threshold, cp.dimension, cp.method, cp.orient,
-                        r["status"], round(r["score"], 4)])
-    return path
-
-
-def write_agent_verdicts(results: dict, out_dir: Path | None = None) -> Path:
-    out_dir = Path(out_dir or config.REPORTS_DIR)
-    path = out_dir / "agent_verdicts.csv"
-    agents = results["verdict"]["agents"]
-    with path.open("w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.writer(fh)
-        w.writerow(["agent_id", "principal", "behaviour", "is_adversary",
-                    "trust_score", "verdict", "failed_controls"])
-        for aid in sorted(agents, key=lambda x: int(x)):
-            a = agents[aid]
-            w.writerow([a["agent_id"], a["principal"], a["behaviour"],
-                        a["is_adversary"], a["trust_score"], a["verdict"],
-                        ";".join(f"{k}({v})" for k, v in a["failed_controls"].items())])
-    return path
-
-
-def write_summary_json(results: dict, out_dir: Path | None = None) -> Path:
-    out_dir = Path(out_dir or config.REPORTS_DIR)
-    path = out_dir / "governance_report.json"
-    with path.open("w", encoding="utf-8") as fh:
-        json.dump(results, fh, indent=2, default=str)
-    return path
-
-
-def write_experiment_csvs(exp: dict, out_dir: Path | None = None) -> dict:
-    """Write the paper-ready experiment tables (E1 closed-loop, E2 detection,
-    E3 ablation). Returns a dict of written paths."""
-    out_dir = Path(out_dir or config.REPORTS_DIR)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    paths = {}
-
-    # E1 — closed-loop gating, one row per seed + an aggregate row
-    p1 = out_dir / "exp_closed_loop.csv"
-    with p1.open("w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.writer(fh)
-        w.writerow(["seed", "naive_accuracy", "governance_accuracy",
-                    "oracle_accuracy", "gating_uplift", "detection_recall",
-                    "detection_precision", "detection_f1", "false_positive_rate"])
-        for r in exp["per_seed"]:
-            d = r["detection"]
-            w.writerow([r["seed"], r["naive_accuracy"], r["governance_accuracy"],
-                        r["oracle_accuracy"], r["gating_uplift"], d["recall"],
-                        d["precision"], d["f1"], d["false_positive_rate"]])
-        e1 = exp["summary"]["E1_closed_loop"]
-        e2 = exp["summary"]["E2_detection"]
-        w.writerow([f"mean±std (n={e1['naive_accuracy']['n']})",
-                    f"{e1['naive_accuracy']['mean']}±{e1['naive_accuracy']['std']}",
-                    f"{e1['governance_accuracy']['mean']}±{e1['governance_accuracy']['std']}",
-                    f"{e1['oracle_accuracy']['mean']}±{e1['oracle_accuracy']['std']}",
-                    f"{e1['gating_uplift']['mean']}±{e1['gating_uplift']['std']}",
-                    f"{e2['recall']['mean']}±{e2['recall']['std']}",
-                    f"{e2['precision']['mean']}±{e2['precision']['std']}",
-                    f"{e2['f1']['mean']}±{e2['f1']['std']}",
-                    f"{e2['false_positive_rate']['mean']}±{e2['false_positive_rate']['std']}"])
-    paths["closed_loop"] = str(p1)
-
-    # E2 — detection confusion matrix (from the first seed for the raw counts)
-    p2 = out_dir / "exp_detection.csv"
-    with p2.open("w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.writer(fh)
-        w.writerow(["metric", "mean", "std", "n"])
-        for k in ("precision", "recall", "f1", "false_positive_rate"):
-            m = exp["summary"]["E2_detection"][k]
-            w.writerow([k, m["mean"], m["std"], m["n"]])
-        # confusion counts per seed
-        w.writerow([])
-        w.writerow(["seed", "TP", "FP", "FN", "TN"])
-        for r in exp["per_seed"]:
-            d = r["detection"]
-            w.writerow([r["seed"], d["TP"], d["FP"], d["FN"], d["TN"]])
-    paths["detection"] = str(p2)
-
-    # E3 — ablation harm table
-    p3 = out_dir / "exp_ablation.csv"
-    with p3.open("w", newline="", encoding="utf-8-sig") as fh:
-        w = csv.writer(fh)
-        w.writerow(["ablation", "slide4_risk", "primary_harm",
-                    "accuracy_under_ablation(mean±std)", "delta_vs_governance",
-                    "n_undetected_adversaries(mean±std)"])
-        for key, v in exp["summary"]["E3_ablation"].items():
-            acc, dl, und = (v["accuracy_under_ablation"], v["delta_vs_governance"],
-                            v["n_undetected_adversaries"])
-            w.writerow([v["name"], v["risk"], v["primary_harm"],
-                        f"{acc['mean']}±{acc['std']}",
-                        f"{dl['mean']}±{dl['std']}",
-                        f"{und['mean']}±{und['std']}"])
-    paths["ablation"] = str(p3)
-    return paths
+from .. import config
+from ..taxonomy import ALL_CONTROLS
 
 
 def write_baseline_csv(bl: dict, out_dir: Path | None = None) -> str:
@@ -448,59 +336,3 @@ def write_backbone_csv(bb: dict, out_dir: Path | None = None) -> str:
                         ms(r["governance_accuracy"]), ms(r["oracle_accuracy"]),
                         ms(r["detection_recall"]), ms(r["honest_false_positive_rate"])])
     return str(p)
-
-
-def render_experiment_summary(exp: dict) -> str:
-    e1 = exp["summary"]["E1_closed_loop"]
-    e2 = exp["summary"]["E2_detection"]
-    lines = [
-        "# Governance Experiments — Summary",
-        f"- Seeds: {exp['seeds']}",
-        "",
-        "## E1 Closed-loop trust gating (global FL accuracy)",
-        f"- naive (all agents):        **{e1['naive_accuracy']['mean']} ± {e1['naive_accuracy']['std']}**",
-        f"- governance (quarantine flagged): **{e1['governance_accuracy']['mean']} ± {e1['governance_accuracy']['std']}**",
-        f"- oracle (ground-truth):     **{e1['oracle_accuracy']['mean']} ± {e1['oracle_accuracy']['std']}**",
-        f"- gating uplift:             **{e1['gating_uplift']['mean']} ± {e1['gating_uplift']['std']}**",
-        "",
-        "## E2 Detection quality (bad-agent identification)",
-        f"- precision **{e2['precision']['mean']}±{e2['precision']['std']}** · "
-        f"recall **{e2['recall']['mean']}±{e2['recall']['std']}** · "
-        f"F1 **{e2['f1']['mean']}±{e2['f1']['std']}** · "
-        f"FPR **{e2['false_positive_rate']['mean']}±{e2['false_positive_rate']['std']}**",
-        "",
-        "## E3 Control ablation — what breaks when a control is removed",
-        "| Protection removed | Slide-4 risk | Acc (mean±std) | Δ vs gov | Undetected adversaries |",
-        "|---|---|---:|---:|---:|",
-    ]
-    for key, v in exp["summary"]["E3_ablation"].items():
-        acc, dl, und = (v["accuracy_under_ablation"], v["delta_vs_governance"],
-                        v["n_undetected_adversaries"])
-        lines.append(f"| {v['name']} | {v['risk']} | {acc['mean']}±{acc['std']} | "
-                     f"{dl['mean']} | {und['mean']}±{und['std']} |")
-    return "\n".join(lines)
-
-
-def render_markdown_summary(results: dict) -> str:
-    v = results["verdict"]
-    lines = [
-        "# Agent Trustworthiness Governance — Run Summary",
-        "",
-        f"- Dataset: **{v.get('dataset')}**",
-        f"- Global FL accuracy — naive FedAvg (all agents): **{v.get('global_accuracy')}**",
-        f"- Global FL accuracy — trust-gated (untrusted excluded): "
-        f"**{v.get('gated_accuracy')}**  (uplift **{v.get('accuracy_uplift_from_gating')}**)",
-        f"- System foundation score: **{v['foundation_score']}** "
-        f"(gate {'OPEN' if v['gate_ok'] else 'BLOCKED ' + str(v['gate_reasons'])})",
-        f"- Verdicts: {v['verdict_counts']}",
-        "",
-        "| Agent | Principal | Injected behaviour | Reputation | Verdict | Failed controls (severity) |",
-        "|------:|-----------|--------------------|-----------:|---------|----------------------------|",
-    ]
-    for aid in sorted(v["agents"], key=lambda x: int(x)):
-        a = v["agents"][aid]
-        fc = ", ".join(f"{k}({s})" for k, s in a["failed_controls"].items())
-        lines.append(
-            f"| {a['agent_id']} | {a['principal']} | {a['behaviour']} | "
-            f"{a['trust_score']} | {a['verdict']} | {fc or '—'} |")
-    return "\n".join(lines)

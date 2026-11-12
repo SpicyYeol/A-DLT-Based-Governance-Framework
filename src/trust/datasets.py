@@ -1,6 +1,6 @@
 """Open-dataset loaders with offline fallbacks.
 
-Two open datasets, matching the two layers the deck cares about:
+Two open datasets, one for each of the two layers the framework governs:
 
 * Image / federated-learning layer  -> MNIST (OpenML, id 554).
   Fallback: scikit-learn ``load_digits`` (bundled, 8x8, real dataset).
