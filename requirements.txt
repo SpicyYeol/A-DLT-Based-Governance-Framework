@@ -1,0 +1,7 @@
+# Pinned to the versions used for every result reported in the paper
+# (environment A, Python 3.12.3; environment B is the same four versions on
+# Python 3.12.14). Accuracies from the two environments are never pooled.
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.5.2
+pandas==2.2.3

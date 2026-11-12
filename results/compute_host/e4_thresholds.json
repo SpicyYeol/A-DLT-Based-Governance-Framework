@@ -1,0 +1,368 @@
+{
+ "calibration_seeds": [
+  150,
+  151,
+  152,
+  153,
+  154,
+  155,
+  156,
+  157,
+  158,
+  159
+ ],
+ "n_calibration_records": 80,
+ "positives": [
+  1
+ ],
+ "negatives": [
+  0,
+  2,
+  4
+ ],
+ "published_sdf03_tau": 0.2,
+ "thresholds": {
+  "gradient": {
+   "r25_iid_f30": 0.253588,
+   "r25_iid_f70": 0.252401,
+   "r25_dir_f30": 0.241685,
+   "r25_dir_f70": 0.274077,
+   "r50_iid_f30": 0.317949,
+   "r50_iid_f70": 0.322449,
+   "r50_dir_f30": 0.287299,
+   "r50_dir_f70": 0.285563
+  },
+  "server_anchored": {
+   "r25_iid_f30": 0.403479,
+   "r25_iid_f70": 0.404116,
+   "r25_dir_f30": 0.656896,
+   "r25_dir_f70": 0.675087,
+   "r50_iid_f30": 0.230679,
+   "r50_iid_f70": 0.228381,
+   "r50_dir_f30": 0.400672,
+   "r50_dir_f70": 0.429642
+  }
+ },
+ "detail": {
+  "r25_iid_f30": {
+   "gradient": {
+    "threshold": 0.253588,
+    "flipper_scores": [
+     0.234966,
+     0.236062,
+     0.258883,
+     0.25938,
+     0.260376,
+     0.285649,
+     0.289491,
+     0.294067,
+     0.299237,
+     0.304275
+    ],
+    "honest_min": 0.163968,
+    "honest_max": 0.279939,
+    "calibration_auroc": 0.88,
+    "separable": false
+   },
+   "server_anchored": {
+    "threshold": 0.403479,
+    "flipper_scores": [
+     0.396728,
+     0.407886,
+     0.40837,
+     0.411688,
+     0.412475,
+     0.413848,
+     0.420823,
+     0.423776,
+     0.424132,
+     0.425437
+    ],
+    "honest_min": 0.368612,
+    "honest_max": 0.409611,
+    "calibration_auroc": 0.9733,
+    "separable": false
+   }
+  },
+  "r25_iid_f70": {
+   "gradient": {
+    "threshold": 0.252401,
+    "flipper_scores": [
+     0.262195,
+     0.267028,
+     0.269768,
+     0.281066,
+     0.301531,
+     0.306013,
+     0.317867,
+     0.325819,
+     0.335452,
+     0.424632
+    ],
+    "honest_min": 0.171553,
+    "honest_max": 0.279126,
+    "calibration_auroc": 0.9833,
+    "separable": false
+   },
+   "server_anchored": {
+    "threshold": 0.404116,
+    "flipper_scores": [
+     0.404816,
+     0.419402,
+     0.421118,
+     0.422145,
+     0.422383,
+     0.422554,
+     0.422799,
+     0.425331,
+     0.435183,
+     0.444436
+    ],
+    "honest_min": 0.370797,
+    "honest_max": 0.403417,
+    "calibration_auroc": 1.0,
+    "separable": true
+   }
+  },
+  "r25_dir_f30": {
+   "gradient": {
+    "threshold": 0.241685,
+    "flipper_scores": [
+     0.191716,
+     0.236625,
+     0.24224,
+     0.284285,
+     0.304113,
+     0.31331,
+     0.347727,
+     0.349862,
+     0.362186,
+     0.392202
+    ],
+    "honest_min": 0.127397,
+    "honest_max": 0.331306,
+    "calibration_auroc": 0.8033,
+    "separable": false
+   },
+   "server_anchored": {
+    "threshold": 0.656896,
+    "flipper_scores": [
+     0.290501,
+     0.353414,
+     0.38915,
+     0.398394,
+     0.42963,
+     0.702779,
+     0.706155,
+     0.709639,
+     0.837393,
+     0.853437
+    ],
+    "honest_min": 0.271255,
+    "honest_max": 0.840282,
+    "calibration_auroc": 0.6033,
+    "separable": false
+   }
+  },
+  "r25_dir_f70": {
+   "gradient": {
+    "threshold": 0.274077,
+    "flipper_scores": [
+     0.24041,
+     0.263273,
+     0.282065,
+     0.316928,
+     0.348258,
+     0.41216,
+     0.424391,
+     0.457626,
+     0.488722,
+     0.526879
+    ],
+    "honest_min": 0.127141,
+    "honest_max": 0.334745,
+    "calibration_auroc": 0.9,
+    "separable": false
+   },
+   "server_anchored": {
+    "threshold": 0.675087,
+    "flipper_scores": [
+     0.293099,
+     0.358054,
+     0.398298,
+     0.40608,
+     0.43798,
+     0.730535,
+     0.749219,
+     0.765493,
+     0.873707,
+     0.908731
+    ],
+    "honest_min": 0.271934,
+    "honest_max": 0.860928,
+    "calibration_auroc": 0.6167,
+    "separable": false
+   }
+  },
+  "r50_iid_f30": {
+   "gradient": {
+    "threshold": 0.317949,
+    "flipper_scores": [
+     0.310442,
+     0.319934,
+     0.323668,
+     0.328572,
+     0.334294,
+     0.336019,
+     0.350378,
+     0.372467,
+     0.375849,
+     0.386477
+    ],
+    "honest_min": 0.238099,
+    "honest_max": 0.346267,
+    "calibration_auroc": 0.9267,
+    "separable": false
+   },
+   "server_anchored": {
+    "threshold": 0.230679,
+    "flipper_scores": [
+     0.231545,
+     0.23388,
+     0.235889,
+     0.236052,
+     0.236466,
+     0.238306,
+     0.241281,
+     0.241861,
+     0.244528,
+     0.244562
+    ],
+    "honest_min": 0.213304,
+    "honest_max": 0.234484,
+    "calibration_auroc": 0.9933,
+    "separable": false
+   }
+  },
+  "r50_iid_f70": {
+   "gradient": {
+    "threshold": 0.322449,
+    "flipper_scores": [
+     0.33214,
+     0.333944,
+     0.33792,
+     0.344413,
+     0.354729,
+     0.362353,
+     0.363483,
+     0.367474,
+     0.386966,
+     0.389937
+    ],
+    "honest_min": 0.23822,
+    "honest_max": 0.33676,
+    "calibration_auroc": 0.9867,
+    "separable": false
+   },
+   "server_anchored": {
+    "threshold": 0.228381,
+    "flipper_scores": [
+     0.23006,
+     0.238197,
+     0.239704,
+     0.240803,
+     0.241027,
+     0.241577,
+     0.243217,
+     0.243622,
+     0.244916,
+     0.247449
+    ],
+    "honest_min": 0.213663,
+    "honest_max": 0.231701,
+    "calibration_auroc": 0.99,
+    "separable": false
+   }
+  },
+  "r50_dir_f30": {
+   "gradient": {
+    "threshold": 0.287299,
+    "flipper_scores": [
+     0.199878,
+     0.214158,
+     0.236601,
+     0.245948,
+     0.290998,
+     0.300806,
+     0.308004,
+     0.361532,
+     0.38194,
+     0.451109
+    ],
+    "honest_min": 0.14324,
+    "honest_max": 0.418989,
+    "calibration_auroc": 0.71,
+    "separable": false
+   },
+   "server_anchored": {
+    "threshold": 0.400672,
+    "flipper_scores": [
+     0.14525,
+     0.185415,
+     0.212055,
+     0.212936,
+     0.229882,
+     0.421112,
+     0.429134,
+     0.442664,
+     0.811376,
+     0.836202
+    ],
+    "honest_min": 0.135628,
+    "honest_max": 0.820237,
+    "calibration_auroc": 0.5933,
+    "separable": false
+   }
+  },
+  "r50_dir_f70": {
+   "gradient": {
+    "threshold": 0.285563,
+    "flipper_scores": [
+     0.192316,
+     0.249928,
+     0.26639,
+     0.297065,
+     0.326866,
+     0.337533,
+     0.347524,
+     0.379768,
+     0.531535,
+     0.573089
+    ],
+    "honest_min": 0.133239,
+    "honest_max": 0.417986,
+    "calibration_auroc": 0.8033,
+    "separable": false
+   },
+   "server_anchored": {
+    "threshold": 0.429642,
+    "flipper_scores": [
+     0.146549,
+     0.189358,
+     0.219746,
+     0.227861,
+     0.22953,
+     0.448723,
+     0.471527,
+     0.484335,
+     0.863501,
+     0.878419
+    ],
+    "honest_min": 0.135967,
+    "honest_max": 0.823462,
+    "calibration_auroc": 0.6167,
+    "separable": false
+   }
+  }
+ }
+}

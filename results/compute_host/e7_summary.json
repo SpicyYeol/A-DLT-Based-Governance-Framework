@@ -1,0 +1,277 @@
+{
+ "experiment": "E7 / P2-2 online adjudication vs participant count",
+ "evaluation_seeds": [
+  500,
+  501,
+  502,
+  503,
+  504,
+  505,
+  506,
+  507,
+  508,
+  509,
+  510,
+  511,
+  512,
+  513,
+  514,
+  515,
+  516,
+  517,
+  518,
+  519
+ ],
+ "n_agents": [
+  20,
+  40,
+  120
+ ],
+ "conditions": [
+  "conv_norm",
+  "gov_no_sdf03",
+  "gov_oracle"
+ ],
+ "rounds": 25,
+ "attack_start": 5,
+ "adv_fraction_target": 0.25,
+ "per_agent_train_samples": 375,
+ "flip_rate": 0.7,
+ "n_records": 180,
+ "summary": {
+  "N20|conv_norm": {
+   "n_agents": 20,
+   "condition": "conv_norm",
+   "n_seeds": 20,
+   "sample_cap": 10000,
+   "samples_per_agent": 375,
+   "n_adversaries": 5,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.1215,
+   "adv_admitted_share_ci": [
+    0.116,
+    0.1275
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0467,
+   "honest_fpr_ci": [
+    0.0233,
+    0.0733
+   ],
+   "honest_wrong_rate_mean": 0.0089,
+   "final_accuracy_mean": 0.8764,
+   "final_accuracy_ci": [
+    0.8728,
+    0.88
+   ]
+  },
+  "N20|gov_no_sdf03": {
+   "n_agents": 20,
+   "condition": "gov_no_sdf03",
+   "n_seeds": 20,
+   "sample_cap": 10000,
+   "samples_per_agent": 375,
+   "n_adversaries": 5,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.1215,
+   "adv_admitted_share_ci": [
+    0.116,
+    0.1275
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0467,
+   "honest_fpr_ci": [
+    0.0233,
+    0.0733
+   ],
+   "honest_wrong_rate_mean": 0.0089,
+   "final_accuracy_mean": 0.8764,
+   "final_accuracy_ci": [
+    0.8728,
+    0.88
+   ]
+  },
+  "N20|gov_oracle": {
+   "n_agents": 20,
+   "condition": "gov_oracle",
+   "n_seeds": 20,
+   "sample_cap": 10000,
+   "samples_per_agent": 375,
+   "n_adversaries": 5,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.121,
+   "adv_admitted_share_ci": [
+    0.116,
+    0.126
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0467,
+   "honest_fpr_ci": [
+    0.0233,
+    0.0733
+   ],
+   "honest_wrong_rate_mean": 0.0089,
+   "final_accuracy_mean": 0.8764,
+   "final_accuracy_ci": [
+    0.8728,
+    0.8799
+   ]
+  },
+  "N40|conv_norm": {
+   "n_agents": 40,
+   "condition": "conv_norm",
+   "n_seeds": 20,
+   "sample_cap": 20000,
+   "samples_per_agent": 375,
+   "n_adversaries": 10,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.1408,
+   "adv_admitted_share_ci": [
+    0.134,
+    0.148
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0267,
+   "honest_fpr_ci": [
+    0.0133,
+    0.0417
+   ],
+   "honest_wrong_rate_mean": 0.0021,
+   "final_accuracy_mean": 0.8845,
+   "final_accuracy_ci": [
+    0.8831,
+    0.8858
+   ]
+  },
+  "N40|gov_no_sdf03": {
+   "n_agents": 40,
+   "condition": "gov_no_sdf03",
+   "n_seeds": 20,
+   "sample_cap": 20000,
+   "samples_per_agent": 375,
+   "n_adversaries": 10,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.1408,
+   "adv_admitted_share_ci": [
+    0.134,
+    0.148
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0267,
+   "honest_fpr_ci": [
+    0.0133,
+    0.0417
+   ],
+   "honest_wrong_rate_mean": 0.0021,
+   "final_accuracy_mean": 0.8845,
+   "final_accuracy_ci": [
+    0.8831,
+    0.8858
+   ]
+  },
+  "N40|gov_oracle": {
+   "n_agents": 40,
+   "condition": "gov_oracle",
+   "n_seeds": 20,
+   "sample_cap": 20000,
+   "samples_per_agent": 375,
+   "n_adversaries": 10,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.14,
+   "adv_admitted_share_ci": [
+    0.1338,
+    0.1463
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0267,
+   "honest_fpr_ci": [
+    0.0133,
+    0.0417
+   ],
+   "honest_wrong_rate_mean": 0.0021,
+   "final_accuracy_mean": 0.8846,
+   "final_accuracy_ci": [
+    0.8832,
+    0.886
+   ]
+  },
+  "N120|conv_norm": {
+   "n_agents": 120,
+   "condition": "conv_norm",
+   "n_seeds": 20,
+   "sample_cap": 60000,
+   "samples_per_agent": 375,
+   "n_adversaries": 30,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.1564,
+   "adv_admitted_share_ci": [
+    0.1529,
+    0.1605
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0111,
+   "honest_fpr_ci": [
+    0.0072,
+    0.0155
+   ],
+   "honest_wrong_rate_mean": 0.0008,
+   "final_accuracy_mean": 0.8875,
+   "final_accuracy_ci": [
+    0.8866,
+    0.8884
+   ]
+  },
+  "N120|gov_no_sdf03": {
+   "n_agents": 120,
+   "condition": "gov_no_sdf03",
+   "n_seeds": 20,
+   "sample_cap": 60000,
+   "samples_per_agent": 375,
+   "n_adversaries": 30,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.1564,
+   "adv_admitted_share_ci": [
+    0.1529,
+    0.1605
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0111,
+   "honest_fpr_ci": [
+    0.0072,
+    0.0155
+   ],
+   "honest_wrong_rate_mean": 0.0008,
+   "final_accuracy_mean": 0.8875,
+   "final_accuracy_ci": [
+    0.8866,
+    0.8884
+   ]
+  },
+  "N120|gov_oracle": {
+   "n_agents": 120,
+   "condition": "gov_oracle",
+   "n_seeds": 20,
+   "sample_cap": 60000,
+   "samples_per_agent": 375,
+   "n_adversaries": 30,
+   "adv_fraction": 0.25,
+   "adv_admitted_share_mean": 0.156,
+   "adv_admitted_share_ci": [
+    0.1527,
+    0.1597
+   ],
+   "adversary_recall_mean": 1.0,
+   "honest_fpr_mean": 0.0111,
+   "honest_fpr_ci": [
+    0.0072,
+    0.0155
+   ],
+   "honest_wrong_rate_mean": 0.0008,
+   "final_accuracy_mean": 0.8873,
+   "final_accuracy_ci": [
+    0.8865,
+    0.8883
+   ]
+  }
+ }
+}

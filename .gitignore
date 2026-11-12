@@ -1,0 +1,17 @@
+# Dataset cache and run output. The datasets are fetched from OpenML on first
+# use (MNIST id 554, Fashion-MNIST id 40996) and are not redistributed here.
+data/
+*.jsonl
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

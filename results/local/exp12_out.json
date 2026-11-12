@@ -1,0 +1,3170 @@
+{
+ "config": {
+  "image_cap": "4000",
+  "seeds": [
+   42,
+   43,
+   44,
+   45,
+   46
+  ],
+  "standard_checks": [
+   "L-IA-03",
+   "M-CV-02",
+   "M-CV-03",
+   "S-DF-02",
+   "S-MI-02"
+  ],
+  "statistical_controls": [
+   "M-BC-01",
+   "M-BC-02",
+   "M-SC-02",
+   "S-DF-03"
+  ],
+  "attestation_controls": [
+   "L-CI-02",
+   "L-CT-01",
+   "L-CT-03",
+   "L-GA-01",
+   "L-GA-03",
+   "L-IA-02",
+   "S-AL-02",
+   "S-MI-03"
+  ],
+  "n_deterministic": 24
+ },
+ "profiles": {
+  "P1_primary": {
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": {
+      "naive": 0.154,
+      "oracle": 0.851,
+      "governance+FedAvg": 0.851,
+      "robust_alone/FedAvg": 0.154,
+      "standard+FedAvg": 0.085,
+      "robust_alone/Multi-Krum": 0.868,
+      "standard+Multi-Krum": 0.851,
+      "robust_alone/Trimmed-Mean": 0.881,
+      "standard+Trimmed-Mean": 0.085
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       3,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": {
+      "naive": 0.148,
+      "oracle": 0.854,
+      "governance+FedAvg": 0.854,
+      "robust_alone/FedAvg": 0.148,
+      "standard+FedAvg": 0.129,
+      "robust_alone/Multi-Krum": 0.865,
+      "standard+Multi-Krum": 0.846,
+      "robust_alone/Trimmed-Mean": 0.866,
+      "standard+Trimmed-Mean": 0.129
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       3,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": {
+      "naive": 0.156,
+      "oracle": 0.861,
+      "governance+FedAvg": 0.861,
+      "robust_alone/FedAvg": 0.156,
+      "standard+FedAvg": 0.102,
+      "robust_alone/Multi-Krum": 0.844,
+      "standard+Multi-Krum": 0.863,
+      "robust_alone/Trimmed-Mean": 0.851,
+      "standard+Trimmed-Mean": 0.102
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       3,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": {
+      "naive": 0.187,
+      "oracle": 0.843,
+      "governance+FedAvg": 0.843,
+      "robust_alone/FedAvg": 0.187,
+      "standard+FedAvg": 0.115,
+      "robust_alone/Multi-Krum": 0.872,
+      "standard+Multi-Krum": 0.851,
+      "robust_alone/Trimmed-Mean": 0.862,
+      "standard+Trimmed-Mean": 0.114
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       3,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": {
+      "naive": 0.154,
+      "oracle": 0.853,
+      "governance+FedAvg": 0.853,
+      "robust_alone/FedAvg": 0.154,
+      "standard+FedAvg": 0.086,
+      "robust_alone/Multi-Krum": 0.873,
+      "standard+Multi-Krum": 0.853,
+      "robust_alone/Trimmed-Mean": 0.883,
+      "standard+Trimmed-Mean": 0.085
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       3,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    }
+   ],
+   "summary_accuracy": {
+    "naive": {
+     "mean": 0.1598,
+     "std": 0.0155
+    },
+    "oracle": {
+     "mean": 0.8524,
+     "std": 0.0065
+    },
+    "governance+FedAvg": {
+     "mean": 0.8524,
+     "std": 0.0065
+    },
+    "robust_alone/FedAvg": {
+     "mean": 0.1598,
+     "std": 0.0155
+    },
+    "standard+FedAvg": {
+     "mean": 0.1034,
+     "std": 0.0189
+    },
+    "robust_alone/Multi-Krum": {
+     "mean": 0.8644,
+     "std": 0.0118
+    },
+    "standard+Multi-Krum": {
+     "mean": 0.8528,
+     "std": 0.0063
+    },
+    "robust_alone/Trimmed-Mean": {
+     "mean": 0.8686,
+     "std": 0.0134
+    },
+    "standard+Trimmed-Mean": {
+     "mean": 0.103,
+     "std": 0.019
+    }
+   },
+   "summary_detection": {
+    "governance_full": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "standard_only": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.6,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.75,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "deterministic": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.6,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.75,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "statistical": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.4,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.5714,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    }
+   }
+  },
+  "P2_stealth": {
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": {
+      "naive": 0.851,
+      "oracle": 0.873,
+      "governance+FedAvg": 0.873,
+      "robust_alone/FedAvg": 0.851,
+      "standard+FedAvg": 0.819,
+      "robust_alone/Multi-Krum": 0.876,
+      "standard+Multi-Krum": 0.849,
+      "robust_alone/Trimmed-Mean": 0.872,
+      "standard+Trimmed-Mean": 0.796
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       2,
+       3,
+       6,
+       7
+      ],
+      "standard_only": [
+       6,
+       7
+      ],
+      "deterministic": [
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       2,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "stealth_scale",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": {
+      "naive": 0.851,
+      "oracle": 0.837,
+      "governance+FedAvg": 0.852,
+      "robust_alone/FedAvg": 0.851,
+      "standard+FedAvg": 0.838,
+      "robust_alone/Multi-Krum": 0.854,
+      "standard+Multi-Krum": 0.815,
+      "robust_alone/Trimmed-Mean": 0.852,
+      "standard+Trimmed-Mean": 0.819
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 4,
+       "FP": 0,
+       "FN": 1,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.8,
+       "f1": 0.8889,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       2,
+       6,
+       7
+      ],
+      "standard_only": [
+       6,
+       7
+      ],
+      "deterministic": [
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       2
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "stealth_scale",
+       "fired": [],
+       "by_standard": false,
+       "by_statistical": false,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": {
+      "naive": 0.842,
+      "oracle": 0.855,
+      "governance+FedAvg": 0.855,
+      "robust_alone/FedAvg": 0.842,
+      "standard+FedAvg": 0.812,
+      "robust_alone/Multi-Krum": 0.855,
+      "standard+Multi-Krum": 0.816,
+      "robust_alone/Trimmed-Mean": 0.854,
+      "standard+Trimmed-Mean": 0.836
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       2,
+       3,
+       6,
+       7
+      ],
+      "standard_only": [
+       6,
+       7
+      ],
+      "deterministic": [
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       2,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "stealth_scale",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": {
+      "naive": 0.832,
+      "oracle": 0.841,
+      "governance+FedAvg": 0.841,
+      "robust_alone/FedAvg": 0.832,
+      "standard+FedAvg": 0.791,
+      "robust_alone/Multi-Krum": 0.855,
+      "standard+Multi-Krum": 0.832,
+      "robust_alone/Trimmed-Mean": 0.863,
+      "standard+Trimmed-Mean": 0.809
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       2,
+       3,
+       6,
+       7
+      ],
+      "standard_only": [
+       6,
+       7
+      ],
+      "deterministic": [
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       2,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "stealth_scale",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": {
+      "naive": 0.856,
+      "oracle": 0.851,
+      "governance+FedAvg": 0.851,
+      "robust_alone/FedAvg": 0.856,
+      "standard+FedAvg": 0.801,
+      "robust_alone/Multi-Krum": 0.845,
+      "standard+Multi-Krum": 0.841,
+      "robust_alone/Trimmed-Mean": 0.845,
+      "standard+Trimmed-Mean": 0.783
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 2,
+       "FP": 0,
+       "FN": 3,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.4,
+       "f1": 0.5714,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       2,
+       3,
+       6,
+       7
+      ],
+      "standard_only": [
+       6,
+       7
+      ],
+      "deterministic": [
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       2,
+       3
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "collude_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "stealth_scale",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    }
+   ],
+   "summary_accuracy": {
+    "naive": {
+     "mean": 0.8464,
+     "std": 0.0095
+    },
+    "oracle": {
+     "mean": 0.8514,
+     "std": 0.0141
+    },
+    "governance+FedAvg": {
+     "mean": 0.8544,
+     "std": 0.0117
+    },
+    "robust_alone/FedAvg": {
+     "mean": 0.8464,
+     "std": 0.0095
+    },
+    "standard+FedAvg": {
+     "mean": 0.8122,
+     "std": 0.0179
+    },
+    "robust_alone/Multi-Krum": {
+     "mean": 0.857,
+     "std": 0.0114
+    },
+    "standard+Multi-Krum": {
+     "mean": 0.8306,
+     "std": 0.015
+    },
+    "robust_alone/Trimmed-Mean": {
+     "mean": 0.8572,
+     "std": 0.0105
+    },
+    "standard+Trimmed-Mean": {
+     "mean": 0.8086,
+     "std": 0.0205
+    }
+   },
+   "summary_detection": {
+    "governance_full": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.96,
+      "std": 0.0894
+     },
+     "f1": {
+      "mean": 0.9778,
+      "std": 0.0497
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "standard_only": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.4,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.5714,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "deterministic": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.4,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.5714,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "statistical": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.56,
+      "std": 0.0894
+     },
+     "f1": {
+      "mean": 0.7143,
+      "std": 0.0799
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    }
+   }
+  },
+  "P3_noniid": {
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": {
+      "naive": 0.121,
+      "oracle": 0.819,
+      "governance+FedAvg": 0.819,
+      "robust_alone/FedAvg": 0.121,
+      "standard+FedAvg": 0.081,
+      "robust_alone/Multi-Krum": 0.856,
+      "standard+Multi-Krum": 0.821,
+      "robust_alone/Trimmed-Mean": 0.846,
+      "standard+Trimmed-Mean": 0.088
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       3,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       3,
+       5
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02",
+        "S-DF-03"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": {
+      "naive": 0.153,
+      "oracle": 0.718,
+      "governance+FedAvg": 0.718,
+      "robust_alone/FedAvg": 0.153,
+      "standard+FedAvg": 0.122,
+      "robust_alone/Multi-Krum": 0.855,
+      "standard+Multi-Krum": 0.781,
+      "robust_alone/Trimmed-Mean": 0.805,
+      "standard+Trimmed-Mean": 0.079
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 0,
+       "FN": 0,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 4,
+       "FP": 0,
+       "FN": 1,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.8,
+       "f1": 0.8889,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       3,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       3,
+       5,
+       6
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02",
+        "S-DF-03"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-DF-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": {
+      "naive": 0.101,
+      "oracle": 0.802,
+      "governance+FedAvg": 0.585,
+      "robust_alone/FedAvg": 0.101,
+      "standard+FedAvg": 0.1,
+      "robust_alone/Multi-Krum": 0.84,
+      "standard+Multi-Krum": 0.764,
+      "robust_alone/Trimmed-Mean": 0.862,
+      "standard+Trimmed-Mean": 0.101
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 2,
+       "FN": 0,
+       "TN": 1,
+       "precision": 0.7143,
+       "recall": 1.0,
+       "f1": 0.8333,
+       "false_positive_rate": 0.6667
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 3,
+       "FP": 2,
+       "FN": 2,
+       "TN": 1,
+       "precision": 0.6,
+       "recall": 0.6,
+       "f1": 0.6,
+       "false_positive_rate": 0.6667
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01",
+        "M-SC-02",
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02",
+        "S-DF-03"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": {
+      "naive": 0.187,
+      "oracle": 0.797,
+      "governance+FedAvg": 0.712,
+      "robust_alone/FedAvg": 0.187,
+      "standard+FedAvg": 0.125,
+      "robust_alone/Multi-Krum": 0.852,
+      "standard+Multi-Krum": 0.789,
+      "robust_alone/Trimmed-Mean": 0.805,
+      "standard+Trimmed-Mean": 0.115
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 1,
+       "FN": 0,
+       "TN": 2,
+       "precision": 0.8333,
+       "recall": 1.0,
+       "f1": 0.9091,
+       "false_positive_rate": 0.3333
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 3,
+       "FP": 1,
+       "FN": 2,
+       "TN": 2,
+       "precision": 0.75,
+       "recall": 0.6,
+       "f1": 0.6667,
+       "false_positive_rate": 0.3333
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       0,
+       1,
+       3,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       0,
+       1,
+       3,
+       6
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-DF-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": {
+      "naive": 0.071,
+      "oracle": 0.766,
+      "governance+FedAvg": 0.624,
+      "robust_alone/FedAvg": 0.071,
+      "standard+FedAvg": 0.041,
+      "robust_alone/Multi-Krum": 0.841,
+      "standard+Multi-Krum": 0.76,
+      "robust_alone/Trimmed-Mean": 0.865,
+      "standard+Trimmed-Mean": 0.049
+     },
+     "gt_bad": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 5,
+       "FP": 2,
+       "FN": 0,
+       "TN": 1,
+       "precision": 0.7143,
+       "recall": 1.0,
+       "f1": 0.8333,
+       "false_positive_rate": 0.6667
+      },
+      "standard_only": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 3,
+       "FP": 0,
+       "FN": 2,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.6,
+       "f1": 0.75,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 2,
+       "FP": 2,
+       "FN": 3,
+       "TN": 1,
+       "precision": 0.5,
+       "recall": 0.4,
+       "f1": 0.4444,
+       "false_positive_rate": 0.6667
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "standard_only": [
+       5,
+       6,
+       7
+      ],
+      "deterministic": [
+       5,
+       6,
+       7
+      ],
+      "statistical": [
+       1,
+       2,
+       3,
+       4
+      ]
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "label_flip",
+       "fired": [
+        "S-DF-03"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-01",
+        "M-SC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "stale",
+       "fired": [
+        "S-DF-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      },
+      "7": {
+       "behaviour": "honest",
+       "fired": [
+        "L-IA-03",
+        "M-CV-02"
+       ],
+       "by_standard": true,
+       "by_statistical": false,
+       "by_deterministic": true
+      }
+     }
+    }
+   ],
+   "summary_accuracy": {
+    "naive": {
+     "mean": 0.1266,
+     "std": 0.0451
+    },
+    "oracle": {
+     "mean": 0.7804,
+     "std": 0.0398
+    },
+    "governance+FedAvg": {
+     "mean": 0.6916,
+     "std": 0.0912
+    },
+    "robust_alone/FedAvg": {
+     "mean": 0.1266,
+     "std": 0.0451
+    },
+    "standard+FedAvg": {
+     "mean": 0.0938,
+     "std": 0.0345
+    },
+    "robust_alone/Multi-Krum": {
+     "mean": 0.8488,
+     "std": 0.0077
+    },
+    "standard+Multi-Krum": {
+     "mean": 0.783,
+     "std": 0.0244
+    },
+    "robust_alone/Trimmed-Mean": {
+     "mean": 0.8366,
+     "std": 0.0297
+    },
+    "standard+Trimmed-Mean": {
+     "mean": 0.0864,
+     "std": 0.0249
+    }
+   },
+   "summary_detection": {
+    "governance_full": {
+     "precision": {
+      "mean": 0.8524,
+      "std": 0.1432
+     },
+     "recall": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.9151,
+      "std": 0.0834
+     },
+     "false_positive_rate": {
+      "mean": 0.3333,
+      "std": 0.3334
+     }
+    },
+    "standard_only": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.6,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.75,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "deterministic": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.6,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.75,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "statistical": {
+     "precision": {
+      "mean": 0.77,
+      "std": 0.228
+     },
+     "recall": {
+      "mean": 0.6,
+      "std": 0.1414
+     },
+     "f1": {
+      "mean": 0.67,
+      "std": 0.1659
+     },
+     "false_positive_rate": {
+      "mean": 0.3333,
+      "std": 0.3334
+     }
+    }
+   }
+  },
+  "P4_collusion": {
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": {
+      "naive": 0.09,
+      "oracle": 0.858,
+      "governance+FedAvg": 0.091,
+      "robust_alone/FedAvg": 0.09,
+      "standard+FedAvg": 0.091,
+      "robust_alone/Multi-Krum": 0.095,
+      "standard+Multi-Krum": 0.081,
+      "robust_alone/Trimmed-Mean": 0.095,
+      "standard+Trimmed-Mean": 0.091
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      5,
+      6
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 0,
+       "FP": 0,
+       "FN": 5,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.0,
+       "f1": 0.0,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       6
+      ],
+      "standard_only": [
+       6
+      ],
+      "deterministic": [
+       6
+      ],
+      "statistical": []
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-BC-02",
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": {
+      "naive": 0.062,
+      "oracle": 0.851,
+      "governance+FedAvg": 0.055,
+      "robust_alone/FedAvg": 0.062,
+      "standard+FedAvg": 0.055,
+      "robust_alone/Multi-Krum": 0.067,
+      "standard+Multi-Krum": 0.062,
+      "robust_alone/Trimmed-Mean": 0.046,
+      "standard+Trimmed-Mean": 0.055
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      5,
+      6
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 0,
+       "FP": 0,
+       "FN": 5,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.0,
+       "f1": 0.0,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       6
+      ],
+      "standard_only": [
+       6
+      ],
+      "deterministic": [
+       6
+      ],
+      "statistical": []
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-BC-02",
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": {
+      "naive": 0.101,
+      "oracle": 0.839,
+      "governance+FedAvg": 0.101,
+      "robust_alone/FedAvg": 0.101,
+      "standard+FedAvg": 0.101,
+      "robust_alone/Multi-Krum": 0.105,
+      "standard+Multi-Krum": 0.101,
+      "robust_alone/Trimmed-Mean": 0.105,
+      "standard+Trimmed-Mean": 0.101
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      5,
+      6
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 0,
+       "FP": 0,
+       "FN": 5,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.0,
+       "f1": 0.0,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       6
+      ],
+      "standard_only": [
+       6
+      ],
+      "deterministic": [
+       6
+      ],
+      "statistical": []
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-BC-02",
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": {
+      "naive": 0.102,
+      "oracle": 0.815,
+      "governance+FedAvg": 0.098,
+      "robust_alone/FedAvg": 0.102,
+      "standard+FedAvg": 0.098,
+      "robust_alone/Multi-Krum": 0.107,
+      "standard+Multi-Krum": 0.103,
+      "robust_alone/Trimmed-Mean": 0.101,
+      "standard+Trimmed-Mean": 0.098
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      5,
+      6
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 0,
+       "FP": 0,
+       "FN": 5,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.0,
+       "f1": 0.0,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       6
+      ],
+      "standard_only": [
+       6
+      ],
+      "deterministic": [
+       6
+      ],
+      "statistical": []
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-BC-02",
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      }
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": {
+      "naive": 0.069,
+      "oracle": 0.858,
+      "governance+FedAvg": 0.067,
+      "robust_alone/FedAvg": 0.069,
+      "standard+FedAvg": 0.067,
+      "robust_alone/Multi-Krum": 0.084,
+      "standard+Multi-Krum": 0.058,
+      "robust_alone/Trimmed-Mean": 0.07,
+      "standard+Trimmed-Mean": 0.067
+     },
+     "gt_bad": [
+      1,
+      2,
+      3,
+      5,
+      6
+     ],
+     "detection": {
+      "governance_full": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "standard_only": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "deterministic": {
+       "TP": 1,
+       "FP": 0,
+       "FN": 4,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.2,
+       "f1": 0.3333,
+       "false_positive_rate": 0.0
+      },
+      "statistical": {
+       "TP": 0,
+       "FP": 0,
+       "FN": 5,
+       "TN": 3,
+       "precision": 1.0,
+       "recall": 0.0,
+       "f1": 0.0,
+       "false_positive_rate": 0.0
+      }
+     },
+     "flagged": {
+      "governance_full": [
+       6
+      ],
+      "standard_only": [
+       6
+      ],
+      "deterministic": [
+       6
+      ],
+      "statistical": []
+     },
+     "attribution": {
+      "1": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "2": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "3": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "5": {
+       "behaviour": "scale_attack",
+       "fired": [
+        "M-BC-02"
+       ],
+       "by_standard": false,
+       "by_statistical": true,
+       "by_deterministic": false
+      },
+      "6": {
+       "behaviour": "tamper",
+       "fired": [
+        "M-BC-02",
+        "M-CV-03",
+        "S-MI-02"
+       ],
+       "by_standard": true,
+       "by_statistical": true,
+       "by_deterministic": true
+      }
+     }
+    }
+   ],
+   "summary_accuracy": {
+    "naive": {
+     "mean": 0.0848,
+     "std": 0.0184
+    },
+    "oracle": {
+     "mean": 0.8442,
+     "std": 0.0181
+    },
+    "governance+FedAvg": {
+     "mean": 0.0824,
+     "std": 0.0203
+    },
+    "robust_alone/FedAvg": {
+     "mean": 0.0848,
+     "std": 0.0184
+    },
+    "standard+FedAvg": {
+     "mean": 0.0824,
+     "std": 0.0203
+    },
+    "robust_alone/Multi-Krum": {
+     "mean": 0.0916,
+     "std": 0.0165
+    },
+    "standard+Multi-Krum": {
+     "mean": 0.081,
+     "std": 0.0211
+    },
+    "robust_alone/Trimmed-Mean": {
+     "mean": 0.0834,
+     "std": 0.0249
+    },
+    "standard+Trimmed-Mean": {
+     "mean": 0.0824,
+     "std": 0.0203
+    }
+   },
+   "summary_detection": {
+    "governance_full": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.2,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.3333,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "standard_only": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.2,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.3333,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "deterministic": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.2,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.3333,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    },
+    "statistical": {
+     "precision": {
+      "mean": 1.0,
+      "std": 0.0
+     },
+     "recall": {
+      "mean": 0.0,
+      "std": 0.0
+     },
+     "f1": {
+      "mean": 0.0,
+      "std": 0.0
+     },
+     "false_positive_rate": {
+      "mean": 0.0,
+      "std": 0.0
+     }
+    }
+   }
+  }
+ }
+}

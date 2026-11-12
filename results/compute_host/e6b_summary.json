@@ -1,0 +1,159 @@
+{
+ "experiment": "E6b / audit replay with evidence provenance separated",
+ "evaluation_seeds": [
+  600,
+  601,
+  602,
+  603,
+  604,
+  605,
+  606,
+  607,
+  608,
+  609,
+  610,
+  611,
+  612,
+  613,
+  614,
+  615,
+  616,
+  617,
+  618,
+  619
+ ],
+ "cells": {
+  "r25_iid": {
+   "rounds": 25,
+   "partition": "iid",
+   "alpha": 1.0,
+   "flip": 0.7,
+   "thr_cell": "r25_iid_f70"
+  },
+  "r25_dir": {
+   "rounds": 25,
+   "partition": "dirichlet",
+   "alpha": 0.5,
+   "flip": 0.7,
+   "thr_cell": "r25_dir_f70"
+  }
+ },
+ "variants": {
+  "governance_privileged": {
+   "keys": [
+    "round",
+    "behaviour",
+    "local_acc",
+    "update_norm",
+    "logged",
+    "model_version",
+    "label_kl_true"
+   ],
+   "kl_source": "label_kl_true",
+   "deployable": false
+  },
+  "governance_deployable": {
+   "keys": [
+    "round",
+    "behaviour",
+    "local_acc",
+    "update_norm",
+    "logged",
+    "model_version",
+    "label_kl_est"
+   ],
+   "kl_source": "label_kl_est",
+   "deployable": true
+  },
+  "conventional_minimal": {
+   "keys": [
+    "round",
+    "behaviour",
+    "update_norm",
+    "logged",
+    "model_version"
+   ],
+   "kl_source": null,
+   "deployable": true
+  },
+  "conventional_full_logging": {
+   "keys": [
+    "round",
+    "behaviour",
+    "update_norm",
+    "logged",
+    "model_version",
+    "label_kl_est"
+   ],
+   "kl_source": "label_kl_est",
+   "deployable": true
+  }
+ },
+ "n_records": 40,
+ "summary": {
+  "r25_iid": {
+   "n_seeds": 20,
+   "gradient_tau": 0.252401,
+   "same_policy": {
+    "governance_privileged": 1.0,
+    "governance_deployable": 0.8313,
+    "conventional_minimal": 1.0,
+    "conventional_full_logging": 1.0
+   },
+   "replay": {
+    "PC1_adopt_sdf03": {
+     "governance_privileged": 1.0,
+     "governance_deployable": 0.8313,
+     "conventional_minimal": 0.0,
+     "conventional_full_logging": 0.8313
+    },
+    "PC2_stat_to_review": {
+     "governance_privileged": 1.0,
+     "governance_deployable": 1.0,
+     "conventional_minimal": 1.0,
+     "conventional_full_logging": 1.0
+    },
+    "PC3_retire_msc02": {
+     "governance_privileged": 1.0,
+     "governance_deployable": 0.8313,
+     "conventional_minimal": 1.0,
+     "conventional_full_logging": 1.0
+    }
+   },
+   "tamper_detected_all_seeds": true,
+   "continuity_all_seeds": true
+  },
+  "r25_dir": {
+   "n_seeds": 20,
+   "gradient_tau": 0.274077,
+   "same_policy": {
+    "governance_privileged": 1.0,
+    "governance_deployable": 0.7438,
+    "conventional_minimal": 1.0,
+    "conventional_full_logging": 1.0
+   },
+   "replay": {
+    "PC1_adopt_sdf03": {
+     "governance_privileged": 1.0,
+     "governance_deployable": 0.7438,
+     "conventional_minimal": 0.0,
+     "conventional_full_logging": 0.7438
+    },
+    "PC2_stat_to_review": {
+     "governance_privileged": 1.0,
+     "governance_deployable": 0.85,
+     "conventional_minimal": 1.0,
+     "conventional_full_logging": 1.0
+    },
+    "PC3_retire_msc02": {
+     "governance_privileged": 1.0,
+     "governance_deployable": 0.7438,
+     "conventional_minimal": 1.0,
+     "conventional_full_logging": 1.0
+    }
+   },
+   "tamper_detected_all_seeds": true,
+   "continuity_all_seeds": true
+  }
+ }
+}

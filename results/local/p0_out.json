@@ -1,0 +1,1452 @@
+{
+ "seeds": [
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "conventional_controls": [
+  "L-IA-03",
+  "M-CV-02",
+  "M-CV-03",
+  "S-DF-02",
+  "S-MI-02"
+ ],
+ "conventional_plus_norm": [
+  "L-IA-03",
+  "M-BC-01",
+  "M-CV-02",
+  "M-CV-03",
+  "S-DF-02",
+  "S-MI-02"
+ ],
+ "summary": {
+  "none": {
+   "enabled_controls": null,
+   "accuracy_mean": 0.1598,
+   "accuracy_sd": 0.0139,
+   "recall": 0.0,
+   "precision": 1.0,
+   "fpr": 0.0,
+   "missed_behaviours": [
+    "label flipping",
+    "replay/stale",
+    "revoked cred.",
+    "scaling",
+    "tampering"
+   ],
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": 0.154,
+     "flagged": [],
+     "TP": 0,
+     "FP": 0,
+     "FN": 5,
+     "TN": 3,
+     "recall": 0.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "reasons": {}
+    },
+    {
+     "seed": 43,
+     "accuracy": 0.148,
+     "flagged": [],
+     "TP": 0,
+     "FP": 0,
+     "FN": 5,
+     "TN": 3,
+     "recall": 0.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "reasons": {}
+    },
+    {
+     "seed": 44,
+     "accuracy": 0.156,
+     "flagged": [],
+     "TP": 0,
+     "FP": 0,
+     "FN": 5,
+     "TN": 3,
+     "recall": 0.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "reasons": {}
+    },
+    {
+     "seed": 45,
+     "accuracy": 0.187,
+     "flagged": [],
+     "TP": 0,
+     "FP": 0,
+     "FN": 5,
+     "TN": 3,
+     "recall": 0.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "reasons": {}
+    },
+    {
+     "seed": 46,
+     "accuracy": 0.154,
+     "flagged": [],
+     "TP": 0,
+     "FP": 0,
+     "FN": 5,
+     "TN": 3,
+     "recall": 0.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "reasons": {}
+    }
+   ]
+  },
+  "ground_truth": {
+   "enabled_controls": "GT",
+   "accuracy_mean": 0.8524,
+   "accuracy_sd": 0.0058,
+   "recall": 1.0,
+   "precision": 1.0,
+   "fpr": 0.0,
+   "missed_behaviours": [],
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": 0.851,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {}
+    },
+    {
+     "seed": 43,
+     "accuracy": 0.854,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {}
+    },
+    {
+     "seed": 44,
+     "accuracy": 0.861,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {}
+    },
+    {
+     "seed": 45,
+     "accuracy": 0.843,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {}
+    },
+    {
+     "seed": 46,
+     "accuracy": 0.853,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {}
+    }
+   ]
+  },
+  "conv": {
+   "enabled_controls": [
+    "L-IA-03",
+    "M-CV-02",
+    "M-CV-03",
+    "S-DF-02",
+    "S-MI-02"
+   ],
+   "accuracy_mean": 0.1034,
+   "accuracy_sd": 0.0169,
+   "recall": 0.6,
+   "precision": 1.0,
+   "fpr": 0.0,
+   "missed_behaviours": [
+    "label flipping",
+    "scaling"
+   ],
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": 0.085,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": 0.129,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": 0.102,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": 0.115,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": 0.086,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    }
+   ]
+  },
+  "conv+MK": {
+   "enabled_controls": [
+    "L-IA-03",
+    "M-CV-02",
+    "M-CV-03",
+    "S-DF-02",
+    "S-MI-02"
+   ],
+   "accuracy_mean": 0.8528,
+   "accuracy_sd": 0.0056,
+   "recall": 0.6,
+   "precision": 1.0,
+   "fpr": 0.0,
+   "missed_behaviours": [
+    "label flipping",
+    "scaling"
+   ],
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": 0.851,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": 0.846,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": 0.863,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": 0.851,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": 0.853,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    }
+   ]
+  },
+  "conv+TM": {
+   "enabled_controls": [
+    "L-IA-03",
+    "M-CV-02",
+    "M-CV-03",
+    "S-DF-02",
+    "S-MI-02"
+   ],
+   "accuracy_mean": 0.103,
+   "accuracy_sd": 0.017,
+   "recall": 0.6,
+   "precision": 1.0,
+   "fpr": 0.0,
+   "missed_behaviours": [
+    "label flipping",
+    "scaling"
+   ],
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": 0.085,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": 0.129,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": 0.102,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": 0.114,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": 0.085,
+     "flagged": [
+      5,
+      6,
+      7
+     ],
+     "TP": 3,
+     "FP": 0,
+     "FN": 2,
+     "TN": 3,
+     "recall": 0.6,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1,
+      3
+     ],
+     "reasons": {
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    }
+   ]
+  },
+  "convnorm": {
+   "enabled_controls": [
+    "L-IA-03",
+    "M-BC-01",
+    "M-CV-02",
+    "M-CV-03",
+    "S-DF-02",
+    "S-MI-02"
+   ],
+   "accuracy_mean": 0.8392,
+   "accuracy_sd": 0.0116,
+   "recall": 0.84,
+   "precision": 1.0,
+   "fpr": 0.0,
+   "missed_behaviours": [
+    "label flipping"
+   ],
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": 0.851,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {
+      "1": [
+       "M-BC-01"
+      ],
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": 0.842,
+     "flagged": [
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 4,
+     "FP": 0,
+     "FN": 1,
+     "TN": 3,
+     "recall": 0.8,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1
+     ],
+     "reasons": {
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": 0.845,
+     "flagged": [
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 4,
+     "FP": 0,
+     "FN": 1,
+     "TN": 3,
+     "recall": 0.8,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1
+     ],
+     "reasons": {
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": 0.817,
+     "flagged": [
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 4,
+     "FP": 0,
+     "FN": 1,
+     "TN": 3,
+     "recall": 0.8,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1
+     ],
+     "reasons": {
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": 0.841,
+     "flagged": [
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 4,
+     "FP": 0,
+     "FN": 1,
+     "TN": 3,
+     "recall": 0.8,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1
+     ],
+     "reasons": {
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    }
+   ]
+  },
+  "convnorm+MK": {
+   "enabled_controls": [
+    "L-IA-03",
+    "M-BC-01",
+    "M-CV-02",
+    "M-CV-03",
+    "S-DF-02",
+    "S-MI-02"
+   ],
+   "accuracy_mean": 0.8392,
+   "accuracy_sd": 0.0116,
+   "recall": 0.84,
+   "precision": 1.0,
+   "fpr": 0.0,
+   "missed_behaviours": [
+    "label flipping"
+   ],
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": 0.851,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {
+      "1": [
+       "M-BC-01"
+      ],
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": 0.842,
+     "flagged": [
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 4,
+     "FP": 0,
+     "FN": 1,
+     "TN": 3,
+     "recall": 0.8,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1
+     ],
+     "reasons": {
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": 0.845,
+     "flagged": [
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 4,
+     "FP": 0,
+     "FN": 1,
+     "TN": 3,
+     "recall": 0.8,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1
+     ],
+     "reasons": {
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": 0.817,
+     "flagged": [
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 4,
+     "FP": 0,
+     "FN": 1,
+     "TN": 3,
+     "recall": 0.8,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1
+     ],
+     "reasons": {
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": 0.841,
+     "flagged": [
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 4,
+     "FP": 0,
+     "FN": 1,
+     "TN": 3,
+     "recall": 0.8,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [
+      1
+     ],
+     "reasons": {
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    }
+   ]
+  },
+  "governance": {
+   "enabled_controls": [
+    "L-CI-01",
+    "L-CI-02",
+    "L-CI-03",
+    "L-CT-01",
+    "L-CT-02",
+    "L-CT-03",
+    "L-GA-01",
+    "L-GA-02",
+    "L-GA-03",
+    "L-IA-01",
+    "L-IA-02",
+    "L-IA-03",
+    "M-BC-01",
+    "M-BC-02",
+    "M-BC-03",
+    "M-CV-01",
+    "M-CV-02",
+    "M-CV-03",
+    "M-SC-01",
+    "M-SC-02",
+    "M-SC-03",
+    "M-TT-01",
+    "M-TT-02",
+    "M-TT-03",
+    "S-AL-01",
+    "S-AL-02",
+    "S-AL-03",
+    "S-DF-01",
+    "S-DF-02",
+    "S-DF-03",
+    "S-MI-01",
+    "S-MI-02",
+    "S-MI-03",
+    "S-RS-01",
+    "S-RS-02",
+    "S-RS-03"
+   ],
+   "accuracy_mean": 0.8524,
+   "accuracy_sd": 0.0058,
+   "recall": 1.0,
+   "precision": 1.0,
+   "fpr": 0.0,
+   "missed_behaviours": [],
+   "per_seed": [
+    {
+     "seed": 42,
+     "accuracy": 0.851,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {
+      "1": [
+       "M-BC-01",
+       "S-DF-03"
+      ],
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 43,
+     "accuracy": 0.854,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {
+      "1": [
+       "S-DF-03"
+      ],
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 44,
+     "accuracy": 0.861,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {
+      "1": [
+       "S-DF-03"
+      ],
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 45,
+     "accuracy": 0.843,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {
+      "1": [
+       "S-DF-03"
+      ],
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    },
+    {
+     "seed": 46,
+     "accuracy": 0.853,
+     "flagged": [
+      1,
+      3,
+      5,
+      6,
+      7
+     ],
+     "TP": 5,
+     "FP": 0,
+     "FN": 0,
+     "TN": 3,
+     "recall": 1.0,
+     "precision": 1.0,
+     "fpr": 0.0,
+     "missed": [],
+     "reasons": {
+      "1": [
+       "S-DF-03"
+      ],
+      "3": [
+       "M-BC-01"
+      ],
+      "5": [
+       "S-DF-02"
+      ],
+      "6": [
+       "M-CV-03",
+       "S-MI-02"
+      ],
+      "7": [
+       "L-IA-03",
+       "M-CV-02"
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

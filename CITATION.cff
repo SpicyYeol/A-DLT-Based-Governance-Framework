@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite the accompanying paper. The paper is
+  under review, so no DOI or volume is given here yet; update this file once
+  the article is published.
+title: >-
+  Hierarchical Trustworthiness Evaluation for Distributed Multi-Agent Systems:
+  A DLT-Based Governance Framework Evaluated in Federated Learning
+abstract: >-
+  Reference implementation and experiment drivers for a DLT-based governance
+  framework that evaluates agent trustworthiness through a 3-12-36 taxonomy of
+  three levels, 12 categories and 36 control points, evaluated in a federated
+  learning testbed.
+type: software
+license: MIT
+authors:
+  - family-names: Yoo
+    given-names: Soonduck
+    affiliation: Department of Management, Hansei University, Gunpo, Republic of Korea
+  - family-names: Kim
+    given-names: Dae-Yeol
+    affiliation: >-
+      Department of Electrical, Electronic and Computer Engineering,
+      University of Ulsan, Ulsan, Republic of Korea
+keywords:
+  - distributed ledger technology
+  - agent governance
+  - federated learning
+  - trustworthiness evaluation
+  - auditability

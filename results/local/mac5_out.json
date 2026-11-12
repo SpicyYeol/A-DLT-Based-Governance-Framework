@@ -1,0 +1,124 @@
+{
+ "seeds": [
+  42,
+  43,
+  44,
+  45,
+  46
+ ],
+ "image_cap": 4000,
+ "rows": [
+  {
+   "agent": 0,
+   "behaviour": "honest",
+   "is_adversary": false,
+   "mac_mean": 0.0236,
+   "mac_sd": 0.0171,
+   "per_seed": [
+    0.014,
+    -0.003,
+    0.048,
+    0.028,
+    0.031
+   ]
+  },
+  {
+   "agent": 1,
+   "behaviour": "label flipping",
+   "is_adversary": true,
+   "mac_mean": 0.0162,
+   "mac_sd": 0.0277,
+   "per_seed": [
+    0.006,
+    -0.022,
+    0.044,
+    0.052,
+    0.001
+   ]
+  },
+  {
+   "agent": 2,
+   "behaviour": "honest",
+   "is_adversary": false,
+   "mac_mean": 0.0232,
+   "mac_sd": 0.0179,
+   "per_seed": [
+    0.022,
+    0.01,
+    0.044,
+    0.042,
+    -0.002
+   ]
+  },
+  {
+   "agent": 3,
+   "behaviour": "scaling",
+   "is_adversary": true,
+   "mac_mean": -0.7026,
+   "mac_sd": 0.0183,
+   "per_seed": [
+    -0.728,
+    -0.708,
+    -0.69,
+    -0.675,
+    -0.712
+   ]
+  },
+  {
+   "agent": 4,
+   "behaviour": "honest",
+   "is_adversary": false,
+   "mac_mean": 0.0212,
+   "mac_sd": 0.0281,
+   "per_seed": [
+    0.047,
+    -0.021,
+    0.04,
+    0.044,
+    -0.004
+   ]
+  },
+  {
+   "agent": 5,
+   "behaviour": "replay/stale",
+   "is_adversary": true,
+   "mac_mean": 0.0228,
+   "mac_sd": 0.0182,
+   "per_seed": [
+    0.029,
+    -0.012,
+    0.039,
+    0.035,
+    0.023
+   ]
+  },
+  {
+   "agent": 6,
+   "behaviour": "tampering",
+   "is_adversary": true,
+   "mac_mean": 0.025,
+   "mac_sd": 0.0186,
+   "per_seed": [
+    0.031,
+    -0.012,
+    0.034,
+    0.035,
+    0.037
+   ]
+  },
+  {
+   "agent": 7,
+   "behaviour": "revoked credential",
+   "is_adversary": true,
+   "mac_mean": 0.0254,
+   "mac_sd": 0.0262,
+   "per_seed": [
+    0.031,
+    -0.025,
+    0.047,
+    0.045,
+    0.029
+   ]
+  }
+ ]
+}

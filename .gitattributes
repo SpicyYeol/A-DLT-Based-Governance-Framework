@@ -1,0 +1,9 @@
+# Normalise text to LF in the repository so a checkout is identical on every
+# platform. The results are committed data and must not be rewritten.
+* text=auto eol=lf
+
+*.png binary
+*.gz  binary
+*.pdf binary
+
+results/** -text
