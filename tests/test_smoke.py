@@ -107,10 +107,73 @@ def test_configuration_is_readable() -> None:
     assert config.ANOMALY_Z_TAU > 0
 
 
+def test_no_module_uses_a_name_it_never_binds() -> None:
+    """Catch the one way splitting a module into a package breaks silently: a
+    function keeps calling a helper that landed in a sibling module, and nothing
+    complains until that function is called, often after minutes of training.
+
+    For every module of the two packages, collect what it binds (imports,
+    assignments, definitions, parameters) and what it loads, and require that
+    nothing is loaded without being bound.
+    """
+    import ast
+    import builtins
+
+    known = set(dir(builtins)) | {
+        "__name__", "__file__", "__doc__", "__package__", "__spec__",
+        "__builtins__",
+    }
+
+    def bound_and_loaded(tree: ast.AST) -> tuple[set[str], dict[str, int]]:
+        bound: set[str] = set()
+        loaded: dict[str, int] = {}
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for a in node.names:
+                    bound.add(a.asname or a.name.split(".")[0])
+            elif isinstance(node, ast.ImportFrom):
+                for a in node.names:
+                    bound.add("*" if a.name == "*" else (a.asname or a.name))
+            elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef,
+                                   ast.ClassDef)):
+                bound.add(node.name)
+            elif isinstance(node, ast.arg):
+                bound.add(node.arg)
+            elif isinstance(node, ast.ExceptHandler) and node.name:
+                bound.add(node.name)
+            elif isinstance(node, (ast.Global, ast.Nonlocal)):
+                bound.update(node.names)
+            elif isinstance(node, ast.Name):
+                if isinstance(node.ctx, (ast.Store, ast.Del)):
+                    bound.add(node.id)
+                else:
+                    loaded.setdefault(node.id, node.lineno)
+        return bound, loaded
+
+    checked = 0
+    for package in ("experiments", "report"):
+        for path in sorted((ROOT / "src" / "trust" / package).glob("*.py")):
+            if path.name == "__init__.py":
+                continue            # the re-export hub binds through import *
+            bound, loaded = bound_and_loaded(
+                ast.parse(path.read_text(encoding="utf-8"), str(path)))
+            if "*" in bound:
+                continue
+            missing = {n: ln for n, ln in loaded.items()
+                       if n not in bound and n not in known}
+            assert not missing, (path.name, missing)
+            checked += 1
+    assert checked >= 14, checked
+
+
 def test_runners_do_not_run_on_import() -> None:
     """Importing a runner must define its work, not do it. Every script under
     scripts/ keeps its work inside a main() behind a __name__ guard, so that
-    reading or importing one cannot start an experiment or write a file."""
+    importing one starts no experiment and produces no output.
+
+    Importing a runner does still create the framework's own data directories,
+    because trust.config makes them when it is imported; what is checked here
+    is that the runner itself does nothing."""
     import contextlib
     import importlib.util
 

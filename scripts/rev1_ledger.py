@@ -50,7 +50,6 @@ from trust.engine import evaluate_controls, score
 from trust.ledger import GENESIS_HASH, Block, Ledger, sha256_hex
 
 OUT = config.DATA_ROOT / "reports_rev1"
-OUT.mkdir(parents=True, exist_ok=True)
 
 SEEDS = [42, 43, 44, 45, 46]
 R = 4                      # replicas in C2
@@ -279,6 +278,7 @@ def run_seed(seed: int) -> dict:
 
 
 def main() -> int:
+    OUT.mkdir(parents=True, exist_ok=True)
     out = [run_seed(s) for s in SEEDS]
     json.dump(out, open(OUT / "rev1_ledger.json", "w"), indent=1, default=str)
     print("done", [o["seed"] for o in out])

@@ -2,7 +2,7 @@
 
 Ties Clause 7 (Trust Control Structure: monitoring / enforcement / audit) to
 Clause 8 (Control Criteria: metrics / thresholds / conformance) and to the
-the three control outcomes: Trusted / Under Review / Untrusted.
+three control outcomes: Trusted / Under Review / Untrusted.
 """
 
 from __future__ import annotations

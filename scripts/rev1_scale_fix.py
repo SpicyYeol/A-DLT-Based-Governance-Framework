@@ -32,6 +32,9 @@ def main() -> int:
         summary.append({"N": N, "blocks": rr[0]["blocks"], "ledger_kb": rr[0]["ledger_bytes"] / 1024,
             "t_train_and_record_s": st.mean(r["t_train_and_record_s"] for r in rr),
             "t_governance_ms": 1e3 * st.mean(r["t_governance_s"] for r in rr),
+            # rev1_scale.py writes this one; without it, repairing a single
+            # point would drop the dispersion for every N in the file
+            "t_governance_ms_sd": 1e3 * st.pstdev([r["t_governance_s"] for r in rr]),
             "t_governance_ms_median": 1e3 * st.median(r["t_governance_s"] for r in rr),
             "t_chain_ms": 1e3 * st.mean(r["t_chain_verify_s"] for r in rr),
             "all_chain_ok": all(r["chain_ok"] for r in rr),

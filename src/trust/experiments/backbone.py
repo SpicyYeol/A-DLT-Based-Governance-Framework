@@ -13,6 +13,7 @@ from .. import aggregators as agg
 from ..engine import build_ctx, evaluate_controls, agent_verdict
 from ..ledger import Ledger
 from ._core import _agg
+from .generalization import _e1e2_for_prep
 
 
 def run_deep_backbone(backbones: list[str] | None = None,

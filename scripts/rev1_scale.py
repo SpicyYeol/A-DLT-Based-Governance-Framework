@@ -39,7 +39,6 @@ from trust.engine import build_ctx, evaluate_controls
 from trust.experiments import _conf, _flagged_set
 
 OUT = config.DATA_ROOT / "reports_rev1"
-OUT.mkdir(parents=True, exist_ok=True)
 
 NS = [8, 16, 32, 64, 128, 256, 512, 1024]
 SEEDS = [42, 43, 44]
@@ -189,6 +188,7 @@ def bench(nblocks=20000):
 
 
 def main() -> int:
+    OUT.mkdir(parents=True, exist_ok=True)
     env = {"python": sys.version.split()[0], "sklearn": sklearn.__version__,
            "cpu": platform.processor(), "image_cap": config.IMAGE_SAMPLE_CAP,
            "rounds": config.NUM_ROUNDS}
