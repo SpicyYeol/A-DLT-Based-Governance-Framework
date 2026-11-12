@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Revision 1 (IEEE Access) — R2-6: scalability to larger, higher-frequency
+"""Scalability to larger, higher-frequency
 agent populations.
 
 Part 1  Participant sweep N = 8 ... 1024 (3 rounds, full MNIST so that every
@@ -14,7 +14,7 @@ Part 2  Throughput micro-benchmarks for high-frequency operation on one core:
         verification, and full re-verification.
 
 Only local computation is measured; no consensus protocol or network is
-simulated (see R1-1).
+simulated: no consensus protocol is run.
 Run:  TRUST_DATA_ROOT=<dir> TRUST_IMAGE_CAP=70000 python scripts/rev1_scale.py
 """
 from __future__ import annotations

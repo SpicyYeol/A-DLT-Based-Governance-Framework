@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""E7 (P2-2): online adjudication as the federation grows.
+"""Online adjudication as the federation grows.
 
 The existing scalability experiment measured processing cost at up to 1,024
 participants. It did not measure the two quantities that matter for governance
@@ -322,7 +322,7 @@ def mode_agg(d, out_path):
                 "final_accuracy_ci": boot_ci([r["final_accuracy"] for r in rs]),
             }
     Path(out_path).write_text(json.dumps({
-        "experiment": "E7 / P2-2 online adjudication vs participant count",
+        "experiment": "online adjudication against participant count",
         "evaluation_seeds": EVAL_SEEDS, "n_agents": list(N_AGENTS),
         "conditions": list(CONDS), "rounds": ROUNDS,
         "attack_start": ATTACK_START, "adv_fraction_target": ADV_FRACTION,

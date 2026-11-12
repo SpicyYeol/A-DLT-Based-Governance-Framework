@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Revision 1 (IEEE Access) — R2-4: detection over an extended seed set.
+"""Detection over an extended seed set.
 
 Primary threat profile, seeds 42..71 (30 seeds). Records per-seed TP/FP/FN/TN
 so that exact (Clopper-Pearson) intervals can be computed on the pooled counts.

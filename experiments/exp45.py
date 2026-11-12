@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
-"""EXP-4  taxonomy justification (weight sensitivity + reduced control set)
-         -> R4-3, R1-2, R3-2
-   EXP-5  seed-level confidence intervals -> R4-5
+"""Two checks on the taxonomy and on the reported intervals.
+
+  1. Weight sensitivity and a reduced control set: does re-weighting the
+     three levels, or dropping controls, change any verdict?
+  2. Seed-level confidence intervals, as against intervals pooled over the
+     individual decisions.
 
 No retraining of new conditions beyond one control-evaluation pass per seed.
 Usage:  python exp45.py <out.json>

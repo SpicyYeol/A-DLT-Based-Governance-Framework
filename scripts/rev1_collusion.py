@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Revision 1 (IEEE Access) — R2-2: empirical check of Proposition 2.
+"""Empirical check of Proposition 2: where peer-relative controls break down.
 
 N = 8 participants. k = 1..6 identities collude by submitting identically
 scaled updates (factor 12); agent 7 tampers with its payload (an

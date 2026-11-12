@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""E6 (P0-2): which auditability property actually distinguishes the framework?
+"""Which auditability property actually distinguishes the framework?
 
 The online-adjudication comparison (Table 11 of the paper) reported a verdict
 reconstruction rate of 1.000 for the conventional
@@ -419,7 +419,7 @@ def mode_agg(d, out_path):
             r["ledger_layers"]["events_logged"] for r in rs), 1)
         summary[cell] = s
     Path(out_path).write_text(json.dumps({
-        "experiment": "E6 / P0-2 auditability layers",
+        "experiment": "auditability layers",
         "evaluation_seeds": EVAL_SEEDS, "cells": CELLS,
         "evidence_fields": rows[0]["evidence_fields"],
         "n_records": len(rows), "summary": summary,

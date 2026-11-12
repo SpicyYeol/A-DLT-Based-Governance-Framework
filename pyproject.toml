@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dlt-governance-framework"
+version = "1.0.0"
+description = """\
+A DLT-based governance framework that evaluates agent trustworthiness through \
+a 3-12-36 taxonomy, with the federated-learning testbed used to evaluate it."""
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12,<3.13"
+authors = [
+    { name = "Soonduck Yoo" },
+    { name = "Dae-Yeol Kim" },
+]
+keywords = [
+    "distributed ledger technology",
+    "agent governance",
+    "federated learning",
+    "trustworthiness evaluation",
+    "auditability",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Pinned, not ranged: these are the versions every reported result was produced
+# with. numpy 1.26.4 has no wheels for Python 3.13 or later, which is why the
+# requires-python ceiling is 3.13.
+dependencies = [
+    "numpy==1.26.4",
+    "scipy==1.13.1",
+    "scikit-learn==1.5.2",
+    "pandas==2.2.3",
+]
+
+[project.urls]
+Repository = "https://github.com/SpicyYeol/A-DLT-Based-Governance-Framework"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["trust*"]

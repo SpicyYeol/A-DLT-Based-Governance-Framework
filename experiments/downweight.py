@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""R4(4): evaluate down-weighting of Under Review contributions as an
+"""Evaluate down-weighting of Under Review contributions as an
 alternative to quarantining them for the current round.
 
 Conditions (primary profile, 5 seeds, cap 4000):

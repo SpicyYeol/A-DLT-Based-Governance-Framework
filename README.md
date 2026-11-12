@@ -90,17 +90,46 @@ cd A-DLT-Based-Governance-Framework
 sh scripts/setup_env.sh                 # or: sh scripts/setup_env.sh /path/to/python3.12
 . .venv/bin/activate                    # Windows: .venv\Scripts\activate
 
-python verify/reproduce_tables.py        # re-derive published values, no experiments run
-python experiments/p0_baseline.py out.json   # re-run the layered baseline comparison
+python tests/test_smoke.py              # seconds: is the install sound?
+python verify/reproduce_tables.py       # re-derive published values, nothing is run
+python run.py list                      # what can be run, and what it produces
+python run.py table10                   # run one experiment -> out/table10.json
 ```
 
-On Windows without a POSIX shell, the setup is three commands:
+On Windows without a POSIX shell the setup is three commands:
 
 ```powershell
 py -3.12 -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
 mkdir data\exp, data\exp12
 ```
+
+To use the framework as a library rather than run the paper's experiments:
+
+```sh
+pip install -e .        # then: from trust.taxonomy import ALL_CONTROLS
+```
+
+### Which command do I want?
+
+| If you want to | Run |
+|---|---|
+| check the published numbers without computing | `python verify/reproduce_tables.py` |
+| confirm your environment works | `python tests/test_smoke.py` |
+| see every experiment and what it produces | `python run.py list` |
+| reproduce one table | `python run.py table10` |
+| reproduce everything that fits on one machine | `python run.py --all` |
+| reproduce the fifty-seed sweeps | see [compute host](#experiments-that-need-a-compute-host) |
+
+`run.py` gives each experiment a name taken from the result it produces. The
+scripts under `experiments/` keep the filenames they had when the results were
+recorded — `p0_baseline.py`, `exp12.py`, `mac5.py` and so on — so that a
+filename in this repository matches the deposited output of the same name. You
+can call them directly; `run.py` exists so you do not have to learn which is
+which. Where a script's own defaults differ from the configuration the paper
+reports, `run.py` passes the reported one: `python run.py table11` runs seeds
+77-101, whereas the script on its own defaults to the five-seed pilot that the
+paper keeps but does not report.
 
 ### Datasets
 
@@ -267,12 +296,15 @@ src/trust/              the framework
   tabular_security.py   the tabular detection path
   config.py             all configuration, read from the environment
 
+run.py                  run an experiment by the name of the table it produces
 experiments/            one driver per reported experiment
-experiments/compute_host/   the fifty-seed sweeps (run / agg subcommands)
+experiments/compute_host/   the fifty-seed sweeps (calibrate / evaluate / aggregate)
 scripts/                environment setup and the testbed's own experiment runners
 audits/                 scripts that audited two specific claims (see below)
 results/                the run outputs behind the published numbers
 verify/                 re-derive published values from those outputs
+tests/                  a seconds-long check that the install is sound
+pyproject.toml          `pip install -e .` for using the framework as a library
 ```
 
 ### `audits/`

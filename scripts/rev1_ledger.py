@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Revision 1 (IEEE Access) — R2-3: isolate the contribution of the ledger.
+"""Isolate the contribution of the ledger from that of the control logic.
 
 The same 36 controls and the same adjudication logic are evaluated over the
 same submission records under three evidence-storage conditions:

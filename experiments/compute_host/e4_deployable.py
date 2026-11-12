@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""E4 (P0-1): does governance still beat the conventional baseline when the
-server may use only information it actually holds?
+"""Does governance still beat the conventional baseline when the server may
+use only information it actually holds?
 
 The online-adjudication comparison (Table 11 of the paper) credited the full
 control set with cutting adversarial admissions from 20.6 to 13.2, but the
@@ -693,7 +693,7 @@ def mode_agg(eval_dir, thr_path, out_path):
             }
 
     Path(out_path).write_text(json.dumps({
-        "experiment": "E4 / P0-1 deployable online governance",
+        "experiment": "deployable online governance",
         "calibration_seeds": thr["calibration_seeds"],
         "evaluation_seeds": EVAL_SEEDS,
         "attack_start": ATTACK_START, "return_round": RETURN_ROUND,

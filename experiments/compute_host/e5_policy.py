@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""E5 (P0-3): enforcement policies compared on the same evidence.
+"""Enforcement policies compared on the same recorded evidence.
 
 The online-adjudication comparison (Table 11 of the paper) showed that making
 exclusions permanent triples the participant-rounds
@@ -411,7 +411,7 @@ def mode_agg(eval_dir, out_path):
                                                    if lat else None),
                 }
     Path(out_path).write_text(json.dumps({
-        "experiment": "E5 / P0-3 enforcement policy comparison",
+        "experiment": "enforcement policy comparison",
         "evaluation_seeds": EVAL_SEEDS, "cells": CELLS,
         "policies": list(POLICIES), "control_sets": list(CTRLSETS),
         "statistical_family": sorted(STATISTICAL),
